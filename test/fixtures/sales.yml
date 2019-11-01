@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  broker: one
+  vehicle: one
+  old_owner: 1
+
+two:
+  user: two
+  broker: two
+  vehicle: two
+  old_owner: 1

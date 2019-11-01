@@ -1,0 +1,140 @@
+
+<section class="inner-intro bg-7 bg-overlay-black-70">
+  <div class="container">
+    <div class="row text-center intro-title">
+      <div class="col-lg-6 col-md-6 text-left">
+         <h1 class="text-white">Vehicles</h1>
+        <%= link_to new_vehicle_path do %>
+        <i class="fa fa-plus" style="font-size:45px;"></i>
+        <%end%>
+      </div>
+      <div class="col-lg-6 col-md-6 text-right">
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i> Home</a>
+            <i class="fa fa-angle-double-right"></i>
+          </li>
+          <li>
+            <a href="#">pages</a>
+            <i class="fa fa-angle-double-right"></i>
+          </li>
+          <li>
+            <span>Vehicles</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+
+
+<!--===== FEATURE CAR SECTION -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="owl-carousel-1">
+                    
+                <%@vehicles.each do |car| %>    
+                    <div class="item">
+                        <div class="car-item text-center">
+                            <div class="car-image">
+                                <%=image_tag (car.img_url), class:"img-responsive", alt:"" %>
+                                    <div class="car-overlay-banner">
+                                      <ul>
+                                        <li>
+                                        <%= link_to(car) do %>
+                                        <i class="fa fa-link">
+                                        </i>
+                                        <%end%>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
+                                      </ul>
+                                    </div>
+                            </div>
+                            <div class="car-list">
+                                <ul class="list-inline">
+                                    <li><i class="fa fa-registered"></i> <%= car.year%></li>
+                                    <li><i class="fa fa-cog"></i> Manual</li>
+                                    <li><i class="fa fa-dashboard"></i> 6,000 mi</li>
+                                </ul>
+                            </div>
+                            <div class="car-content">
+                                <div class="star">
+                                    <i class="fa fa-star orange-color"></i>
+                                    <i class="fa fa-star orange-color"></i>
+                                    <i class="fa fa-star orange-color"></i>
+                                    <i class="fa fa-star orange-color"></i>
+                                    <i class="fa fa-star-o orange-color"></i>
+                                </div>
+                                <a href="#"><%= "#{car.brand}  #{car.model}"%></a>
+                                <div class="separator"></div>
+                                <div class="price">
+                                    <span class="old-price">$<%= car.value %></span>
+                                    <span class="new-price">$<%= car.value %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%end%>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--===== FEATURE CAR SECTION -->
+
+
+
+
+
+
+
+
+
+
+<%
+=begin%>
+ <table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Brand</th>
+      <th>Year</th>
+      <th>Model</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.user %></td>
+        <td><%= vehicle.brand %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.value %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %> 
+<%
+=end%>
+
+
+
+
+</div>
