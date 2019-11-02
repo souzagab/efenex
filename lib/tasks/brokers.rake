@@ -1,5 +1,5 @@
 namespace :brokers do
-  desc "TODO"
+  desc "Create Brokers"
   task populate: :environment do
     NUM = [1,2,3,4,5]
 
